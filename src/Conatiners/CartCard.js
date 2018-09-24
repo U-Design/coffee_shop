@@ -24,7 +24,7 @@ class CartCoffee extends React.Component{
                         </div>
                         <div className='col-sm-4'>
                             <span>Quantity : {coffee.qty}</span>
-                            
+
                         </div>
                     </div>
 
