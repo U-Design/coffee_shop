@@ -1,0 +1,10 @@
+.card-deck.coffee-deck{
+    justify-content: center;
+}
+.coffee-container{
+    margin-top: 20px;
+}
+
+.coffee-container .ProductCard{
+    border-color: black;
+}

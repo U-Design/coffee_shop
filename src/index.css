@@ -2,8 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url("Resources/background/drew-coffman-94401.jpg");
+
 }
 html , body{
-  height: 100%;
+  height: 100vh;
 }
-

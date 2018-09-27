@@ -1,0 +1,20 @@
+.cartList{
+    max-height: 50vh;
+    overflow: auto;
+}
+.cartList > ul{
+    padding-right: 0;
+}
+
+li.blank{
+    min-height: 50vh;
+    opacity: .4;
+}
+
+.cartContainer{
+    margin-top: 20px;
+}
+
+.cartContainer .below{
+    margin-top: 20px;
+}
