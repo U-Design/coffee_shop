@@ -19,6 +19,7 @@ class App extends Component {
                       </div>
                   </div>
                   <div className="row mainSection">
+
                       <Route exact path="/" component={CoffeesContainer}/>
                       <Route exact path="/Cart" component={CartContainer}/>
                   </div>

@@ -17,6 +17,7 @@ export class NavHeader extends Component{
 
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav mr-auto">
+
                     <Link to={'/'} className="nav-link">Menu</Link>
 
                 </div>
