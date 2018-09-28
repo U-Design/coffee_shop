@@ -48,10 +48,12 @@ class CartItemRow extends Component{
     }
     col5(){
         return(
+            <div className="w-50" >
             <button type="button" className="close" aria-label="Close"
                     onClick={() => this.props.onDelete(this.props.id)}>
                 <span aria-hidden="true">&times;</span>
             </button>
+            </div>
         )
     }
 

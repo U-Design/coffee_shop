@@ -20,7 +20,7 @@ class CartCardRow extends Component{
                 <div className="col-sm-2">
                     {this.props.col4}
                 </div>
-                <div className="col-sm-1">
+                <div className="col-sm-1 justify-content-start">
                     {this.props.col5}
 
                 </div>

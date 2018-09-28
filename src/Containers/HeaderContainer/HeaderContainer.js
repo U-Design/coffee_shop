@@ -8,7 +8,7 @@ import "./HeaderContainer.css";
 
 export class NavHeader extends Component{
     render(){
-        return( <nav className="navbar  sticky-top col-sm-12 navbar-expand-lg navbar-dark bg-dark">
+        return( <nav className="navbar  sticky-top col-sm-12 navbar-expand navbar-dark bg-dark">
             <a className="navbar-brand" href="#">Coffee Plaza</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
