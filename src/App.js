@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import NavHeader from './Conatiners/Header'
+import NavHeader from './Containers/HeaderContainer/HeaderContainer'
 import './App.css';
 import { Provider } from 'react-redux';
 import store from "./store";
-import CoffeeList from "./Conatiners/CoffeeList";
-import CartCoffee from "./Conatiners/CartCard";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {LoginForm} from "./Conatiners/LoginForm";
+import CoffeesContainer from "./Containers/CoffeesContainer/CoffeesContainer";
+import CartContainer from "./Containers/CartContainer/CartContainer";
+import wall from "./Resources/background/drew-coffman-94401.jpg"
 
 class App extends Component {
   render() {
     return (
         <Provider store={store}>
-          <div className="container body">
-              <div className="row">
-                  <div className='col-sm-12'>
+            <Router>
+              <div className="container-fluid body">
+                  <div className="row  sticky-top">
                       <NavHeader/>
+                      <div className='col-sm-12'>
+                      </div>
                   </div>
-              </div>
-              <div className="row">
-                  <div className='col-sm-6'>
-                    <CoffeeList/>
+                  <div className="row mainSection">
+                      <Route exact path="/" component={LoginForm}/>
+                      <Route exact path="/Menu" component={CoffeesContainer}/>
+                      <Route exact path="/Cart" component={CartContainer}/>
                   </div>
-                  <div className='col-sm-6'>
-                    <CartCoffee/>
-                  </div>
-              </div>
 
-          </div>
+              </div>
+            </Router>
         </Provider>
     );
   }

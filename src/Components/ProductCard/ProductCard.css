@@ -1,0 +1,8 @@
+.ProductCard.card{
+    width: 15rem;
+    margin-bottom: 15px;
+}
+.ProductCard .card-img-top{
+    width : 100%;
+    height: 15rem;
+}
