@@ -5,9 +5,7 @@ import CartCardRow from "./CartCardRow";
 import Counter from "../Counter/Counter";
 
 class CartItemRow extends Component{
-    constructor(props){
-        super(props);
-    }
+
     render(){
         return(
             <CartCardRow col1={this.col1()}

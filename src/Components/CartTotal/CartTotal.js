@@ -10,7 +10,7 @@ class CartTotal extends Component{
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">Total : ₹{this.props.value}</h5>
-                    <a href="#" className="btn btn-primary">Checkout</a>
+                    <button className="btn btn-primary">Checkout</button>
                 </div>
             </div>
 
@@ -18,7 +18,7 @@ class CartTotal extends Component{
     }
 }
 CartTotal.propTypes = {
-  value: PropTypes.number.isRequired
+  value: PropTypes.string.isRequired
 };
 
 export default CartTotal;

@@ -64,6 +64,20 @@ export class CartContainer extends Component{
     }
 }
 
+CartContainer.propTypes = {
+    productsInCart: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        type: PropTypes.string,
+        price: PropTypes.number,
+        quantity: PropTypes.number
+    })).isRequired,
+    cartTotalValue: PropTypes.string.isRequired,
+    productsQtyId: PropTypes.object.isRequired,
+    updateProductQty: PropTypes.func.isRequired,
+    deleteItemFromCart: PropTypes.func.isRequired,
+    deleteCart: PropTypes.func.isRequired
+}
+
 const mapStateToProps = function (state) {
 
     return{

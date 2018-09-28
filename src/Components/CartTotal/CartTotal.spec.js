@@ -18,12 +18,12 @@ const setUp = (value) => {
 describe('CartBadge component', () => {
 
     it('should be bootstrap card', () => {
-        const { card } = setUp( 400 );
+        const { card } = setUp( '400' );
         expect(card).toBeDefined();
     });
 
     it('should have card-title to display total value', () => {
-        const { cardTitle } = setUp(400);
+        const { cardTitle } = setUp('400');
         expect(cardTitle).toBeDefined();
         expect(cardTitle.text()).toEqual("Total : ₹400")
     });

@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 
 
 class ProductCard extends Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     render() {
         return (
