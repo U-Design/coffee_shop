@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {addItemToCart, updateProductQty, deleteItemFromCart} from "../../Action/Action"
+import {addItemToCart, updateProductQty, deleteItemFromCart, saveCartToLocalStorage} from "../../Action/Action"
 import PropTypes from "prop-types";
 import * as images from "../../Images";
 import "./CoffeesContainer.css";
@@ -62,6 +62,7 @@ const mapDispatchToProps = function (dispatch) {
     return{
         addItemToCart : (id, qty) =>{
             dispatch(addItemToCart(id, qty));
+            dispatch(saveCartToLocalStorage());
         },
         updateProductQty : ( id, qty) => {
 
@@ -69,6 +70,7 @@ const mapDispatchToProps = function (dispatch) {
             if(!qty){  // if qty becomes 0 remove the item from cart.
                 dispatch(deleteItemFromCart(id));
             }
+            dispatch(saveCartToLocalStorage());
         }
     }
 };

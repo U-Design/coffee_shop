@@ -1,7 +1,6 @@
 import React, {Component}from 'react';
 import "./CartCardRow.css";
 import PropTypes from "prop-types";
-import Counter from "../Counter/Counter";
 
 class CartCardRow extends Component{
 
