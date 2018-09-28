@@ -2,6 +2,7 @@ import {ADD_ITEM_TO_CART,
         REMOVE_ITEM_FROM_CART,
         UPDATE_ITEM_COUNT_CART,
         DELETE_CART} from "../Constant/ActionTypes";
+import * as actions from "../Constant/ActionTypes";
 
 
 const initialState = {
@@ -77,9 +78,15 @@ const quantityById = (state = initialState["quantityById"], action) => {
 
 
 const cart = (state = initialState, action) => {
-    return {   // handle state obj separately and join them to form parent state.
-        addedItemId : addIds(state.addedItemId, action),
-        quantityById : quantityById(state.quantityById, action)
+    switch (action.type) {
+        case actions.GET_CART_FROM_LOCAL_STORAGE:
+            return action.savedState? action.savedState : state;
+
+        default:
+            return {   // handle state obj separately and join them to form parent state.
+                addedItemId: addIds(state.addedItemId, action),
+                quantityById: quantityById(state.quantityById, action)
+            }
     }
 };
 

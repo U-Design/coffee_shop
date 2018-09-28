@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {updateProductQty, deleteItemFromCart, deleteCart} from "../../Action/Action"
+import {updateProductQty, deleteItemFromCart, deleteCart, saveCartToLocalStorage} from "../../Action/Action"
 import PropTypes from "prop-types";
 import {getCartProducts, getTotal} from "../../Reducers";
 import CartItemRow from "../../Components/CartCard/CartItemRow";
@@ -83,14 +83,17 @@ const mapDispatchToProps = function (dispatch) {
             if(!qty){  // if qty becomes 0 remove the item from cart.
                 dispatch(deleteItemFromCart(id));
             }
+            dispatch(saveCartToLocalStorage());
         },
 
         deleteItemFromCart : (id) =>{
             dispatch(deleteItemFromCart(id));
+            dispatch(saveCartToLocalStorage());
         },
 
         deleteCart: () =>{
             dispatch(deleteCart());
+            dispatch(saveCartToLocalStorage());
         }
 
     }

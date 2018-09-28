@@ -1,13 +1,8 @@
 import * as actions from "../Constant/ActionTypes";
 import fetchProducts from "../DummyApi/dummyApi";
+import store from "../store";
 
-export function selectCoffeeAction(payload) {
 
-    return {
-        type: "SELECT_COFFEE",
-        payload: {...payload, qty: 1}
-    }
-}
 /****************************Product Fetch Action**************************************************/
 function fetchStarts() {
     return {
@@ -28,8 +23,10 @@ export const fetchProductData = () => {
         dispatch(fetchStarts());
         fetchProducts()
             .then((products) => {
-                dispatch(fetchEnds(products))
-            });
+                dispatch(fetchEnds(products));
+            }).then(() => {
+                dispatch(getCartFromLocalStorage());
+        });
     }
 };
 
@@ -60,5 +57,23 @@ export const deleteItemFromCart = (id) =>{
 export const deleteCart = () => {
     return {
         type : actions.DELETE_CART
+    }
+};
+
+/************************************local Strorage****************************************/
+
+export const saveCartToLocalStorage =() => {
+    let state = store.getState().cart;
+    localStorage.setItem('state' , JSON.stringify(state));
+    return{
+        type: actions.SAVE_CART_TO_LOCAL_STORAGE
+    }
+};
+
+export const getCartFromLocalStorage = ()=>{
+    let state = JSON.parse(localStorage.getItem('state'));
+    return {
+        type: actions.GET_CART_FROM_LOCAL_STORAGE,
+        savedState : state
     }
 };

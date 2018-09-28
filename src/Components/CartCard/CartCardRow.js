@@ -1,7 +1,6 @@
 import React, {Component}from 'react';
 import "./CartCardRow.css";
 import PropTypes from "prop-types";
-import Counter from "../Counter/Counter";
 
 class CartCardRow extends Component{
 
@@ -21,7 +20,7 @@ class CartCardRow extends Component{
                 <div className="col-sm-2">
                     {this.props.col4}
                 </div>
-                <div className="col-sm-1">
+                <div className="col-sm-1 justify-content-start">
                     {this.props.col5}
 
                 </div>

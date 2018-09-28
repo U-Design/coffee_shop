@@ -4,10 +4,8 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from "./store";
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import {LoginForm} from "./Conatiners/LoginForm";
 import CoffeesContainer from "./Containers/CoffeesContainer/CoffeesContainer";
 import CartContainer from "./Containers/CartContainer/CartContainer";
-import wall from "./Resources/background/drew-coffman-94401.jpg"
 
 class App extends Component {
   render() {
@@ -21,8 +19,8 @@ class App extends Component {
                       </div>
                   </div>
                   <div className="row mainSection">
-                      <Route exact path="/" component={LoginForm}/>
-                      <Route exact path="/Menu" component={CoffeesContainer}/>
+
+                      <Route exact path="/" component={CoffeesContainer}/>
                       <Route exact path="/Cart" component={CartContainer}/>
                   </div>
 
